@@ -4,7 +4,6 @@ import { SectionProps } from '../../utils/SectionProps';
 import ButtonGroup from '../elements/ButtonGroup';
 import Button from '../elements/Button';
 import Image from '../elements/Image';
-import Modal from '../elements/Modal';
 import HeroImage from '../../assets/images/hero-image.svg';
 const propTypes = {
   ...SectionProps.types
@@ -25,17 +24,6 @@ const Hero = ({
   ...props
 }) => {
 
-  const [videoModalActive, setVideomodalactive] = useState(false);
-
-  const openModal = (e) => {
-    e.preventDefault();
-    setVideomodalactive(true);
-  }
-
-  const closeModal = (e) => {
-    e.preventDefault();
-    setVideomodalactive(false);
-  }   
 
   const outerClasses = classNames(
     'hero section center-content',
@@ -47,7 +35,6 @@ const Hero = ({
   );
 
   const innerClasses = classNames(
-    'hero-inner section-inner',
     topDivider && 'has-top-divider',
     bottomDivider && 'has-bottom-divider'
   );
@@ -73,9 +60,6 @@ const Hero = ({
                   <Button tag="a" color="primary" wideMobile href="https://cruip.com/">
                     Get started
                     </Button>
-                  <Button tag="a" color="dark" wideMobile href="https://github.com/cruip/open-react-template/">
-                    View on Github
-                    </Button>
                 </ButtonGroup>
               </div>
             </div>
@@ -83,14 +67,14 @@ const Hero = ({
         </div>
       </div>
     </section>
-    <div className="w-full flex items-center justify-center">
+    <div className="w-full flex items-center justify-center" style={{marginBottom:"64px"}}>
             <Image
                 src={HeroImage}
                 alt="Hero"
-                className={'ml-auto'}
-                width={896}
+                style={{margin:"auto"}}
+                width={500}
                 height={504} />
-          </div></>
+      </div></>
    
   );
 }
